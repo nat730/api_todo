@@ -1,14 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser'; // Ajout du "middleware" bodyParser pour eviter de parseint toute les lignes (conseil trouver sur le net pour la netete du code)
 import { DestroyTask, addTask, getAllTasks, updateTask,DestroyAll } from './sequelize'; // Importez les fonctions de votre fichier sequelize.js
-import { todo } from 'node:test';
 
 const port = 3000;
 const app = express();
 
 app.use(bodyParser.json()); // ceci permet d'eviter de "parseint" chaque données, app.use permet "d'activer" un middleware
 
-app.post('/api/add', (req, res) => {
+app.get('/api/add/${taskText}', (req, res) => {
   const newData = req.body;
   addTask(newData) // Utilisez la fonction addtask
     .then(() => {
