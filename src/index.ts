@@ -91,5 +91,3 @@ app.get('/api/DeleteAll', async (req: express.Request, res: express.Response) =>
 const server = app.listen(port, () => {
   console.log(`Serveur en écoute sur http://localhost:${port}`);
 });
-
-//d
