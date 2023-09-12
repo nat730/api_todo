@@ -1,25 +1,27 @@
 import { Sequelize, DataTypes } from 'sequelize';
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './db.sqlite',
+
+const sequelize = new Sequelize('nom_de_la_base_de_donnees', 'utilisateur', 'mot_de_passe', {
+  host: 'localhost', // Remplacez par l'hôte de votre base de données PostgreSQL
+  dialect: 'postgres', // Indiquez que vous utilisez PostgreSQL
+  logging: false, // Vous pouvez désactiver les journaux Sequelize si vous le souhaitez
 });
 
 const Todo = sequelize.define('Todo', {
     id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     name: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     status: {
-        type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN,
     },
-}, {
+  }, {
     timestamps: false,
-});
+  });
 
 // Fonctions pour interagir avec la base de données
 
@@ -45,7 +47,7 @@ export async function DestroyTask(id: number) {
 
 export async function DestroyAll() {
     Todo.destroy({where: {},
-        truncate: true} )
+        truncate: true}  )
 }
 
 export default sequelize;

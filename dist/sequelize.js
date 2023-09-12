@@ -11,9 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DestroyAll = exports.DestroyTask = exports.updateTask = exports.getAllTasks = exports.addTask = void 0;
 const sequelize_1 = require("sequelize");
-const sequelize = new sequelize_1.Sequelize({
-    dialect: 'sqlite',
-    storage: './db.sqlite',
+const sequelize = new sequelize_1.Sequelize('nom_de_la_base_de_donnees', 'utilisateur', 'mot_de_passe', {
+    host: 'localhost',
+    dialect: 'postgres',
+    logging: false, // Vous pouvez désactiver les journaux Sequelize si vous le souhaitez
 });
 const Todo = sequelize.define('Todo', {
     id: {
