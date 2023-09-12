@@ -96,4 +96,5 @@ app.get('/api/DeleteAll', (req, res) => __awaiter(void 0, void 0, void 0, functi
 const server = app.listen(port, () => {
     console.log(`Serveur en écoute sur http://localhost:${port}`);
 });
+//d
 //# sourceMappingURL=index.js.map
