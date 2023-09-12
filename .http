@@ -1,1 +1,7 @@
 GET http://localhost:3000/api/2
+###
+PUT http://localhost:3000/api/update/1/true
+###
+PUT http://localhost:3000/api/remove/2
+###
+GET http://localhost:3000/api/DeleteAll
