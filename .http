@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/2
+GET http://localhost:3000/api/data
 ###
 PUT http://localhost:3000/api/update/1/true
 ###
