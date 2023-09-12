@@ -40,14 +40,7 @@ app.get('/api/data', (req, res) => {
     });
 });
 app.get('/', (req, res) => {
-    (0, sequelize_1.getAllTasks)() // Utilisez la fonction pour récupérer toutes les tâches
-        .then((dataStore) => {
-        res.json(dataStore);
-    })
-        .catch((error) => {
-        console.error('Erreur lors de la récupération des tâches :', error);
-        res.status(500).json({ error: 'Erreur lors de la récupération des tâches.' });
-    });
+    res.status(200).send();
 });
 app.put('/api/update/:id/:actif', (req, res) => {
     const idParam = req.params.id;
